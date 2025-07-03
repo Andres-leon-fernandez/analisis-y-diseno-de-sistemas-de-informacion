@@ -1,4 +1,4 @@
-package com.mycompany.ecolimpio.conexion;
+package com.mycompany.ecolimpio.config;
 
 import java.sql.Connection;
 
