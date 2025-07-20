@@ -1,24 +1,61 @@
 package com.mycompany.ecolimpio.model;
 
 import java.time.LocalDate;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.util.List;
+
+import jakarta.persistence.*;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
+@Entity
+@Table(name = "tb_tecnico")
 public class Tecnico {
 
-    private long idTecnico;
+    public enum EspecialidadTecnico{
+        LIMPIEZA_GENERAL,
+        DESINFECCION,
+        FUMIGACION,
+        LIMPIEZA_POST_OBRA,
+        LIMPIEZA_INDUSTRIAL,
+        LIMPIEZA_VENTANAS_ALTURA,
+        MANTENIMIENTO_PISOS,
+        TRATAMIENTO_AMBIENTAL
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_tecnico",updatable = false,nullable = false)
+    private Long idTecnico;
+
+    @Column(name = "nombre",nullable = false,updatable = false)
     private String nombre;
+
+    @Column(name = "apellido",nullable = false,updatable = false)
     private String apellido;
-    private String especialidad;
+
+    @Column(name = "dni",nullable = false,updatable = false)
+    private String dni;
+
+    @Column(name = "especialidad",nullable = false,length = 50)
+    private EspecialidadTecnico especialidad;
+
+    @Column(name = "telefono",nullable = false,length = 50)
     private String telefono;
+
+    @Column(name = "email",nullable = false,length = 50)
     private String email;
+
+    @Column(name = "fecha_contratacion",nullable = false,updatable = false)
     private LocalDate fechaContratacion;
+
+    @Column(name = "activo",nullable = false)
     private boolean activo;
 
+    @OneToMany(mappedBy = "tecnico")
+    private List<Notificacion> notificaciones;
 }

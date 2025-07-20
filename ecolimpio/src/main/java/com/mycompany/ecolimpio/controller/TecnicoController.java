@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.ecolimpio.controller;
 
-/**
- *
- * @author Andres
- */
+import com.mycompany.ecolimpio.Service.ServicioService;
+import com.mycompany.ecolimpio.Service.TecnicoService;
+import com.mycompany.ecolimpio.model.Servicio;
+import com.mycompany.ecolimpio.model.Tecnico;
+
+import java.util.List;
+
 public class TecnicoController {
-    
+    private final TecnicoService tecnicoService = new TecnicoService();
+
+    public void registrarTecnico(Tecnico tecnico) {
+        tecnicoService.registrar(tecnico);
+    }
+
+    public void actualizarTecnico(Tecnico tecnico) {
+        tecnicoService.actualizar(tecnico);
+    }
+
+    public void eliminarTecnico(Long id) {
+        tecnicoService.eliminar(id);
+    }
+
+    public List<Tecnico> listarTecnico() {
+        return tecnicoService.listarTodos();
+    }
+
+    public Tecnico obtenerTecnico(Long id) {
+        return tecnicoService.listarPorId(id);
+    }
 }

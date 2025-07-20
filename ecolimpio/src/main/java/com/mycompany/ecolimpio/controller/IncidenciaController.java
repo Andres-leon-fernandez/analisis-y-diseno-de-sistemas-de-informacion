@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.ecolimpio.controller;
 
-/**
- *
- * @author Andres
- */
+import com.mycompany.ecolimpio.Service.FacturaService;
+import com.mycompany.ecolimpio.Service.IncidenciaService;
+import com.mycompany.ecolimpio.model.Factura;
+import com.mycompany.ecolimpio.model.Incidencia;
+
+import java.util.List;
+
 public class IncidenciaController {
-    
+    private final IncidenciaService incidenciaService = new IncidenciaService();
+
+    public void registrarIncidencia(Incidencia inc) {
+        incidenciaService.registrar(inc);
+    }
+
+    public void actualizarIncidencia(Incidencia inc) {
+        incidenciaService.actualizar(inc);
+    }
+
+    public void eliminarIncidencia(Long id) {
+        incidenciaService.eliminar(id);
+    }
+
+    public List<Incidencia> listarIncidencia() {
+        return incidenciaService.listarTodos();
+    }
+
+    public Incidencia obtenerIncidencia(Long id) {
+        return incidenciaService.listarPorId(id);
+    }
 }
