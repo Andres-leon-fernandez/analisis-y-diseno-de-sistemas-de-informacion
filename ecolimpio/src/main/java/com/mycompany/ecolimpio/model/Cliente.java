@@ -1,73 +1,34 @@
-
 package com.mycompany.ecolimpio.model;
 
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
 public class Cliente {
-    private int idCliente;
+
+    private long idCliente;
     private String nombreCompleto;
     private String email;
     private String telefono;
     private String direccion;
     private LocalDate fechaRegistro;
 
-    public Cliente() {
-    }
-
-    public Cliente(int idCliente, String nombreCompleto, String email, String telefono, String direccion, LocalDate fechaRegistro) {
-        this.idCliente = idCliente;
-        this.nombreCompleto = nombreCompleto;
-        this.email = email;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.fechaRegistro = fechaRegistro;
-    }
-
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String celular) {
-        this.telefono = celular;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public LocalDate getfechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setfechaRegistro(LocalDate fecha) {
-        this.fechaRegistro = fecha;
-    }
 }
+
+//Cliente cliente = Cliente.builder()
+//    .nombreCompleto("Juan Pérez")
+//    .email("juan@email.com")
+//    .telefono("123456789")
+//    .direccion("Calle Falsa 123")
+//    .fechaRegistro(LocalDate.now())
+//    .build();
