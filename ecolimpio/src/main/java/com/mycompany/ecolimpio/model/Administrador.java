@@ -31,7 +31,7 @@ public class Administrador {
     @Column(name = "email", nullable = false, length = 35)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 64)
+    @Column(name = "password", nullable = false, length = 65)
     private String contrasena;
 
     @Column(name = "fechaCreacion", nullable = false)

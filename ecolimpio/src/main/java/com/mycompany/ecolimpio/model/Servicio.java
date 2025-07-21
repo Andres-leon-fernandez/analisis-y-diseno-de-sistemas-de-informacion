@@ -67,7 +67,7 @@ public class Servicio {
     @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL)
     private List<Incidencia> incidencias;
 
-    @Column(name = "subtotal", precision = 3, scale = 2, nullable = false)
+    @Column(name = "subtotal", precision = 5, scale = 2, nullable = false)
     private BigDecimal subTotal;
 
     @Lob

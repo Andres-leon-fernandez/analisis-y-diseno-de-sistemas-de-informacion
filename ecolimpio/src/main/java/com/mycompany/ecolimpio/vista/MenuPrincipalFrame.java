@@ -4,16 +4,18 @@
  */
 package com.mycompany.ecolimpio.vista;
 
+import com.mycompany.ecolimpio.model.Administrador;
+
 /**
  *
  * @author Andres
  */
-public class MenuPrincipalFrame extends javax.swing.JFrame {
+public class MenuPrincipalFrame extends javax.swing.JFrame  {
 
     /**
      * Creates new form MenuPrincipalFrame
      */
-    public MenuPrincipalFrame() {
+    public MenuPrincipalFrame(Administrador adminSecion) {
         initComponents();
     }
 

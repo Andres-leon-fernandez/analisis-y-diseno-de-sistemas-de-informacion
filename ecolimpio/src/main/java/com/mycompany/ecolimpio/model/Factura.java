@@ -32,7 +32,7 @@ public class Factura {
     @Column(name = "fecha_hora_emision", updatable = false, nullable = false)
     private LocalDateTime fechaHoraEmision;
 
-    @Column(name = "monto", precision = 3, scale = 2, nullable = false)
+    @Column(name = "monto", precision = 5, scale = 2, nullable = false)
     private BigDecimal montoTotal;
 
     @Column(name = "estado_pago", length = 10, nullable = false)

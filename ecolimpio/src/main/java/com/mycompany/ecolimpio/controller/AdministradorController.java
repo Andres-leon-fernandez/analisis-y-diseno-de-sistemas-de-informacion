@@ -28,4 +28,8 @@ public class AdministradorController {
     public Administrador obtenerAdministrador(Long id) {
         return administradorService.listarPorId(id);
     }
+    
+    public Administrador login(String user , String paswword){
+        return administradorService.LoginServicio(user, paswword);
+    }
 }
