@@ -12,7 +12,7 @@ import lombok.*;
 @Builder
 
 @Entity
-@Table(name = "tb_indidencia")
+@Table(name = "tb_incidencia")
 public class Incidencia {
 
     @Id

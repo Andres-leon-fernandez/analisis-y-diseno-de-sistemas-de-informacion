@@ -6,12 +6,7 @@ import com.mycompany.ecolimpio.controller.ClienteController;
 import com.mycompany.ecolimpio.model.Cliente;
 import com.mycompany.ecolimpio.model.HistorialCliente;
 import com.mycompany.ecolimpio.model.Servicio;
-import com.mycompany.ecolimpio.util.HibernateUtil;
-import com.mycompany.ecolimpio.util.Sha256;
 import com.mycompany.ecolimpio.vista.LoginFrame;
-import com.mycompany.ecolimpio.model.Administrador;
-import jakarta.persistence.*;
-import org.hibernate.Session;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

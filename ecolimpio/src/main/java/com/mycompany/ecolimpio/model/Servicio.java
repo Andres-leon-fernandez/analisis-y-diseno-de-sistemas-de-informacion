@@ -18,7 +18,7 @@ import lombok.*;
 @Builder
 
 @Entity
-@Table(name = "servicios")
+@Table(name = "tb_servicios")
 public class Servicio {
 
     public enum EstadoServicio {

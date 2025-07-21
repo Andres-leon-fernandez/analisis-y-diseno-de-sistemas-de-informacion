@@ -12,7 +12,7 @@ import lombok.*;
 @Builder
 
 @Entity
-@Table(name = "tb_notificaion")
+@Table(name = "tb_notificacion")
 public class Notificacion {
 
     public enum TipoNotificacion {
