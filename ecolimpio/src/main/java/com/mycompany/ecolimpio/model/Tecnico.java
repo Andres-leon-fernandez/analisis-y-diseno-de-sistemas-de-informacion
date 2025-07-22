@@ -15,6 +15,12 @@ import lombok.*;
 @Entity
 @Table(name = "tb_tecnico")
 public class Tecnico {
+    
+    
+    public enum Activo{
+        ACTIVO,
+        DESACTIVO
+    }
 
     public enum EspecialidadTecnico{
         LIMPIEZA_GENERAL,
@@ -41,6 +47,7 @@ public class Tecnico {
     @Column(name = "dni",nullable = false,updatable = false)
     private String dni;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "especialidad",nullable = false,length = 50)
     private EspecialidadTecnico especialidad;
 
@@ -53,8 +60,9 @@ public class Tecnico {
     @Column(name = "fecha_contratacion",nullable = false,updatable = false)
     private LocalDate fechaContratacion;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "activo",nullable = false)
-    private boolean activo;
+    private Activo activo;
 
     @OneToMany(mappedBy = "tecnico")
     private List<Notificacion> notificaciones;

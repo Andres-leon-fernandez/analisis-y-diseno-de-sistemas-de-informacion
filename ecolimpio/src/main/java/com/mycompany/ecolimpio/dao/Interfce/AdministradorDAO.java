@@ -1,7 +1,6 @@
 package com.mycompany.ecolimpio.dao.Interfce;
 
 import com.mycompany.ecolimpio.model.Administrador;
-import com.mycompany.ecolimpio.model.Cliente;
 
 import java.util.List;
 
@@ -11,4 +10,5 @@ public interface AdministradorDAO {
     void eliminar(Long idadministrador);
     Administrador buscarPorId(Long idadministrador);
     List<Administrador> listarTodos();
+    public Administrador buscarPorUsuarioYClave(String user, String paswword);
 }

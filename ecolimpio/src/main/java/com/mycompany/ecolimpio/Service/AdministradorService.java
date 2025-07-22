@@ -38,15 +38,7 @@ public class AdministradorService {
     }
 
     public Administrador LoginServicio(String user, String paswword) {
-        List<Administrador> administradores = administradorDAO.listarTodos();
-        String paswwordHash = Sha256.sha256(paswword);
-        for (Administrador admin : administradores) {
-            if (admin.getNombreUsuario().equals(user) && admin.getContrasena().equals(paswwordHash)) {
-                return admin;
-                
-            }
-        }
-        JOptionPane.showMessageDialog(null, "Usuario o Contraseña erronia");
-        return null;
+        String paswwordHash=Sha256.sha256(paswword);
+        return administradorDAO.buscarPorUsuarioYClave(user, paswwordHash);
     }
 }
